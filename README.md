@@ -16,7 +16,7 @@
 ---
 
 ## 프로젝트 구조
-
+``` bash
 Road_Datalab/
 ├─ home/ # 홈 페이지 관련 HTML/CSS/JS
 ├─ login/ # 로그인 페이지 관련 HTML/CSS/JS
@@ -30,7 +30,7 @@ Road_Datalab/
 ├─ package-lock.json # 패키지 잠금 파일
 ├─ README.md # 프로젝트 설명
 └─ finalproject_workspace.code-workspace # VSCode 워크스페이스 설정
-
+```
 ---
 
 ## 사용 기술
