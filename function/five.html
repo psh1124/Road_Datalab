@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Road_Datalab</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./five.css">
+    <!-- <link rel="shortcut icon" href="../favicon.png"> -->
+</head>
+<body>
+        <header style="position: fixed;">
+            <div class="container">
+                <h1><a href="../home/home.html" class="no-style">
+                    <img src="../name.png" class="logo"></a></h1>
+                <nav>
+                    <ul>
+                        <li><a href="../home/home.html">Home</a></li>
+                        <li><a href="../login/login.html">Log In</a></li>
+                        <li><a href="../find/signup.html">Sign Up</a></li>
+                        <li><a href="../function/map.html">Function</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>                                                            
+        </header>
+    <div class="page-wrapper">
+        <main>
+            <a href="./five.html"><div class="name" style="font-family : 'NanumSquare', sans-serif;">차고지 추천 서비스</div></a>
+            <div class="radio">
+                <input type="radio" id="pair-1" name="pair" value="pair-1" onchange="toggleContent()"> pair1
+                <input type="radio" id="pair-2" name="pair" value="pair-2" onchange="toggleContent()"> pair2
+                <input type="radio" id="pair-3" name="pair" value="pair-3" onchange="toggleContent()"> pair3
+            </div>
+            <div id="content-wrapper" style="margin-left: 100px;">
+                <section class="content">
+                    <div class="service-grid">
+                        <div class="button-container">
+                            <select id="rankSelect" onchange="handleSelection()">
+                                <option value="레이더차트1.png" data-row="0">No.1</option>
+                                <option value="레이더차트2.png" data-row="1">No.2</option>
+                                <option value="레이더차트3.png" data-row="2">No.3</option>
+                                <option value="레이더차트4.png" data-row="3">No.4</option>
+                                <option value="레이더차트5.png" data-row="4">No.5</option>
+                                <option value="레이더차트6.png" data-row="5">No.6</option>
+                                <option value="레이더차트7.png" data-row="6">No.7</option>
+                                <option value="레이더차트8.png" data-row="7">No.8</option>
+                                <option value="레이더차트9.png" data-row="8">No.9</option>
+                                <option value="레이더차트10.png" data-row="9">No.10</option>
+                            </select>
+                        </div>
+                        <img id="radarImage" style="display:none;">
+                        <div style="margin-bottom: 80px;">
+                            <table class="tb" style="display:none;">
+                                <tr style="font-size: 18px;">
+                                    <td>주차장 이름</td><td>주차장 가능대수</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div id="output" class="output-container"></div>
+                                    </td>
+                                    <td>
+                                        <div id="output2" class="output-container"></div>
+                                    </td>
+                                </tr>
+                                <tr id="extraRow" style="display:none;">
+                                    <td>
+                                        <div id="output3" class="output-container"></div>
+                                    </td>
+                                    <td>
+                                        <div id="output4" class="output-container"></div>
+                                    </td>
+                                </tr>
+                                <tr id="extraRow2" style="display:none;">
+                                    <td>
+                                        <div id="output5" class="output-container"></div>
+                                    </td>
+                                    <td>
+                                        <div id="output6" class="output-container"></div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    
+    </div>
+    <script src="select.js"></script>
+    <script src="five.js"></script>
+                <iframe 
+                    id="mapIframe"
+                    src=""
+                    allowfullscreen="" 
+                    loading="lazy"
+                    style="display:none">
+                </iframe>
+        <footer>
+            <div class="container">
+                <p>&copy; 2024 Road_Datalab. All Rights Reserved.</p>
+            </div>
+        </footer>
+</body>
+</html>

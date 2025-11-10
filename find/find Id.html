@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이디 찾기</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../base.css">
+    <link rel="stylesheet" href="../find/find Id.css">
+    <!-- <link rel="shortcut icon" href="../favicon.png"> -->
+</head>
+<body>
+    <div class="page-wrapper">
+        <header>
+            <div class="container">
+                <h1><a href="../home/home.html" class="no-style">
+                    <img src="../black_name.png" alt="Logo" class="logo"></a></h1>
+                <nav>
+                <nav>
+                    <ul>
+                        <li><a href="../home/home.html">Home</a></li>
+                        <li><a href="../login/login.html">Log In</a></li>
+                        <li><a href="../find/signup.html">Sign Up</a></li>
+                        <li><a href="../function/map.html">Function</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div class="findid-wrapper">
+                <h2>아이디 찾기</h2>
+                <form method="post" action="서버의url" id="findid-form">
+                    <input type="text" name="fullName" placeholder="Full Name" required>
+                    <input type="tel" name="tel" placeholder="Tel" required>
+                    <input type="submit" value="아이디 찾기">
+                </form>
+                <div class="findid-links">
+                    <a href="../find/find Ps.html">비밀번호를 잊으셨나요? 비밀번호 찾기</a>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="container">
+                <p>&copy; 2024 Road_Datalab. All Rights Reserved.</p>
+            </div>
+        </footer>
+    </div>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const header = document.querySelector("header");
+        const footer = document.querySelector("footer");
+           function addExitAnimation() {
+          header.style.animation = "slideUpOut 1s ease-in-out forwards";
+          footer.style.animation = "slideDownOut 1s ease-in-out forwards";
+        }
+        window.addEventListener("beforeunload", addExitAnimation);
+        document.querySelectorAll("a").forEach(function (link) {
+             link.addEventListener("click", function (event) {
+                event.preventDefault();
+                addExitAnimation();
+                setTimeout(() => {
+                    window.location.href = link.href;
+                }, 1000);
+            });
+        });
+    });
+    </script>
+</body>
+</html>

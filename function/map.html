@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Road_Datalab</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" />
+    <link rel="stylesheet" href="../base.css" />
+    <link rel="stylesheet" href="./map.css" />
+    <!-- <link rel="shortcut icon" href="../favicon.png" /> -->
+</head>
+
+<body>
+    <header style="position: fixed;">
+        <div class="container">
+            <h1>
+                <a href="../home/home.html" class="no-style">
+                    <img src="../name.png" class="logo" />
+                </a>
+            </h1>
+            <nav>
+                <ul>
+                    <li><a href="../home/home.html">Home</a></li>
+                    <li><a href="../login/login.html">Log In</a></li>
+                    <li><a href="../find/signup.html">Sign Up</a></li>
+                    <li><a href="../function/map.html">Function</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-wrapper">
+            <a href="./map.html">
+                <div class="name" style="font-size: 58px;">현황분석</div>
+            </a>
+            <div id="content-wrapper">
+                <section class="content">
+                    <div class="service-grid">
+                        <div class="button-container">
+                            <button class="a" onclick="setActive(this)">교통현황</button>
+                            <button class="b" onclick="setActive(this)">교통량</button>
+                            <button class="c" onclick="setActive(this)">유동인구+주거인구</button>
+                            <button class="d" onclick="setActive(this)">관광지</button>
+                            <button class="e" onclick="setActive(this)">차고지+주차장</button>
+                            <button class="f" onclick="setActive(this)">상권매출</button>
+                        </div>
+                    </div>
+                </section>
+                <iframe id="mapIframe" src="" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+    </main>
+    <a href="./five.html">
+        <div class="bot">차고지 추천 서비스</div>
+    </a>
+    <footer>
+        <div class="footer_container">
+            <p>&copy; 2024 Road_Datalab. All Rights Reserved.</p>
+        </div>
+    </footer>
+    </div>
+    <script src="map.js"></script>
+</body>
+
+</html>
