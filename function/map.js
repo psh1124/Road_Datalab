@@ -14,7 +14,7 @@ function setActive(button) {
     f: "https://kepler.gl/demo/map?mapUrl=https://dl.dropboxusercontent.com/scl/fi/gc8klmb4sidv3vou9y4b5/keplergl_tyu3twp.json?rlkey=78gtu07dnf7ocl2v7fxxk24ww&dl=0",
   };
 
-  // URL iframe에 ㄱㄱ
+  // URL iframe에 삽입
   var url = mapUrls[buttonClass];
   if (url) {
     document.getElementById("mapIframe").src = url;

@@ -88,6 +88,10 @@ input {
     color: #f2f2f2;
 }
 
+footer{
+    position: fixed;
+}
+
 @media (max-width: 767px) {
     .page {
         height: auto;

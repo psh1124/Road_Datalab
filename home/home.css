@@ -157,7 +157,6 @@ main .service-item p {
 
 footer {
     animation: slideUp 0.8s ease-in-out forwards;
-    /* position: fixed; */
     width: 100%;
     bottom: 0%;
     background-color: #333;
