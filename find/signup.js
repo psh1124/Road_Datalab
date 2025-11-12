@@ -1,155 +1,60 @@
-document.addEventListener('DOMContentLoaded', function() {
-    var form = document.getElementsByClassName('login-form')[0];
-
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
-        alert('박성훈 님 반갑습니다!');
-
-        setTimeout(function() {
-            window.location.href = '../function/map.html';
-        }, 500);
-    });
-});
-
-
-var current = null;
-document.querySelector("#email").addEventListener("focus", function (e) {
-  if (current) current.pause();
-  current = anime({
-    targets: "path",
-    strokeDashoffset: {
-      value: 0,
-      duration: 700,
-      easing: "easeOutQuart"
-    },
-    strokeDasharray: {
-      value: "240 1386",
-      duration: 700,
-      easing: "easeOutQuart"
-    }
-  });
-});
-document.querySelector("#password").addEventListener("focus", function (e) {
-  if (current) current.pause();
-  current = anime({
-    targets: "path",
-    strokeDashoffset: {
-      value: -336,
-      duration: 700,
-      easing: "easeOutQuart"
-    },
-    strokeDasharray: {
-      value: "240 1386",
-      duration: 700,
-      easing: "easeOutQuart"
-    }
-  });
-});
-document.querySelector("#submit").addEventListener("focus", function (e) {
-  if (current) current.pause();
-  current = anime({
-    targets: "path",
-    strokeDashoffset: {
-      value: -730,
-      duration: 700,
-      easing: "easeOutQuart"
-    },
-    strokeDasharray: {
-      value: "530 1386",
-      duration: 700,
-      easing: "easeOutQuart"
-    }
-  });
-});
 document.addEventListener("DOMContentLoaded", function () {
-  var form = document.querySelector(".login-form");
+  const form = document.querySelector(".form");
+  const inputs = form.querySelectorAll("input:not([type='submit'])");
+  const submitBtn = document.getElementById("submit");
 
-  form.addEventListener("click", function (event) {
-    event.preventDefault();
-
-    var email = document.getElementById("email").value;
-    var password = document.getElementById("password").value;
-
-    if (email === "qwer" && password === "1234") {
-      alert("박성훈 님 반갑습니다!");
-
-      setTimeout(function () {
-        window.location.href = "../function/map.html";
-      }, 500);
-    } else {
-      alert("아이디 또는 비밀번호가 잘못되었습니다.");
-    }
+  inputs.forEach(input => {
+    input.addEventListener("focus", () => {
+      input.style.borderColor = "#01A4EC";
+    });
+    input.addEventListener("blur", () => {
+      input.style.borderColor = "white";
+    });
   });
-});
 
-var current = null;
-document.querySelector("#email").addEventListener("focus", function (e) {
-  if (current) current.pause();
-  current = anime({
-    targets: "path",
-    strokeDashoffset: {
-      value: 0,
-      duration: 700,
-      easing: "easeOutQuart",
-    },
-    strokeDasharray: {
-      value: "240 1386",
-      duration: 700,
-      easing: "easeOutQuart",
-    },
-  });
-});
-document.querySelector("#password").addEventListener("focus", function (e) {
-  if (current) current.pause();
-  current = anime({
-    targets: "path",
-    strokeDashoffset: {
-      value: -336,
-      duration: 700,
-      easing: "easeOutQuart",
-    },
-    strokeDasharray: {
-      value: "240 1386",
-      duration: 700,
-      easing: "easeOutQuart",
-    },
-  });
-});
-document.querySelector("#submit").addEventListener("focus", function (e) {
-  if (current) current.pause();
-  current = anime({
-    targets: "path",
-    strokeDashoffset: {
-      value: -730,
-      duration: 700,
-      easing: "easeOutQuart",
-    },
-    strokeDasharray: {
-      value: "530 1386",
-      duration: 700,
-      easing: "easeOutQuart",
-    },
-  });
-});
+  function validateForm() {
+    let valid = true;
 
-document.addEventListener('DOMContentLoaded', function() {
-  const header = document.querySelector('header');
-  const footer = document.querySelector('footer');
-  const pageWrapper = document.querySelector('.page-wrapper');
+    inputs.forEach(input => {
+      const value = input.value.trim();
 
-  function fadeOutElements() {
-      header.classList.add('slide-up-out');
-      footer.classList.add('slide-down-out');
-      pageWrapper.classList.add('fade-out');
+      if (value === "") {
+        valid = false;
+        alert(`${input.previousElementSibling.innerText}를 입력해주세요.`);
+        input.focus();
+        return false;
+      }
+
+      if (input.type === "email") {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(value)) {
+          valid = false;
+          alert("올바른 이메일을 입력해주세요.");
+          input.focus();
+          return false;
+        }
+      }
+
+      if (input.type === "password" && value.length < 6) {
+        valid = false;
+        alert("비밀번호는 최소 6자리 이상이어야 합니다.");
+        input.focus();
+        return false;
+      }
+    });
+
+    return valid;
   }
-
-  document.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', function(e) {
-          e.preventDefault();
-          fadeOutElements();
-          setTimeout(() => {
-              window.location.href = link.href;
-          }, 1000);
-      });
+  
+  // 모든 입력값 출력 (서버 연동 시 fetch, post  == 지금은 그냥 정적으로만)
+  
+  submitBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (validateForm()) {
+      inputs.forEach(input => console.log(`${input.id}: ${input.value}`));
+      alert("회원가입 완료! (서버 연동 필요)");
+      
+      inputs.forEach(input => input.value = "");
+    }
   });
 });

@@ -1,11 +1,12 @@
 function setActive(button) {
-  var buttons = document.querySelectorAll(".button-container button");
-  buttons.forEach(function (btn) {
-    btn.classList.remove("active");
-  });
+  const buttons = document.querySelectorAll(".button-container button");
+
+  buttons.forEach(function (btn) { btn.classList.remove("active"); });
   button.classList.add("active");
-  var buttonClass = button.classList[0];
-  var mapUrls = {
+
+  // const buttonClass = button.classList[0];
+
+  const mapUrls = {
     a: "https://kepler.gl/demo/map?mapUrl=https://dl.dropboxusercontent.com/scl/fi/2ovos2vdpr0fztw3mius4/keplergl_k4ovmi.json?rlkey=timympjhdy46tb4fn9hijblgr&dl=0",
     b: "https://kepler.gl/demo/map?mapUrl=https://dl.dropboxusercontent.com/scl/fi/t3w3nhz71xe93u2edm7hw/keplergl_klipf2q.json?rlkey=p29mkfm4simn0r44fhfb508rm&dl=0",
     c: "https://kepler.gl/demo/map?mapUrl=https://dl.dropboxusercontent.com/scl/fi/dv43p04l6duuvdidv2zzo/keplergl_hz623v.json?rlkey=ktk5s89vvwph0idqwxly41r0e&dl=0",
@@ -14,52 +15,66 @@ function setActive(button) {
     f: "https://kepler.gl/demo/map?mapUrl=https://dl.dropboxusercontent.com/scl/fi/gc8klmb4sidv3vou9y4b5/keplergl_tyu3twp.json?rlkey=78gtu07dnf7ocl2v7fxxk24ww&dl=0",
   };
 
-  // URL iframe에 삽입
-  var url = mapUrls[buttonClass];
+  const url = mapUrls[button.classList[0]];
+
   if (url) {
     document.getElementById("mapIframe").src = url;
   } else {
     console.error("URL not found for button class:", buttonClass);
   }
+
+  const oldIframe = document.getElementById("mapIframe");
+  if (oldIframe) oldIframe.remove();
+
+  const iframe = document.createElement("iframe");
+  const wrapper = document.getElementById("content-wrapper");
+  
+  iframe.id = "mapIframe";
+  iframe.src = url;
+  iframe.width = "100%";
+  iframe.height = "600px";
+  iframe.allowFullscreen = true;
+  iframe.loading = "lazy";
+  wrapper.appendChild(iframe);
 }
 
 document.addEventListener("DOMContentLoaded", function () {
   const header = document.querySelector("header");
   const footer = document.querySelector("footer");
-     function addExitAnimation() {
+  function addExitAnimation() {
     header.style.animation = "slideUpOut 1s ease-in-out forwards";
     footer.style.animation = "slideDownOut 1s ease-in-out forwards";
   }
   window.addEventListener("beforeunload", addExitAnimation);
   document.querySelectorAll("a").forEach(function (link) {
-       link.addEventListener("click", function (event) {
-          event.preventDefault();
-          addExitAnimation();
-          setTimeout(() => {
-              window.location.href = link.href;
-          }, 700);
-      });
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+      addExitAnimation();
+      setTimeout(() => {
+        window.location.href = link.href;
+      }, 700);
+    });
   });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const header = document.querySelector('header');
   const footer = document.querySelector('footer');
   const pageWrapper = document.querySelector('.page-wrapper');
 
   function fadeOutElements() {
-      header.classList.add('slide-up-out');
-      footer.classList.add('slide-down-out');
-      pageWrapper.classList.add('fade-out');
+    header.classList.add('slide-up-out');
+    footer.classList.add('slide-down-out');
+    pageWrapper.classList.add('fade-out');
   }
 
   document.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', function(e) {
-          e.preventDefault();
-          fadeOutElements();
-          setTimeout(() => {
-              window.location.href = link.href;
-          }, 700);
-      });
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      fadeOutElements();
+      setTimeout(() => {
+        window.location.href = link.href;
+      }, 700);
+    });
   });
 });

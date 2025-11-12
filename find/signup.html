@@ -16,8 +16,7 @@
   <header>
     <div class="container">
       <h1>
-        <a href="../home/home.html" class="no-style"><img src="../name.png" alt="Logo"
-            class="logo" /></a>
+        <a href="../home/home.html" class="no-style"><img src="../name.png" alt="Logo" class="logo" /></a>
       </h1>
       <nav>
         <ul>
@@ -31,48 +30,56 @@
     </div>
   </header>
   <div class="page-wrapper">
-    <div class="page">
-      <div class="container2">
-        <div class="left">
-          <span>
-            <img src="../black_name.png" alt="" style="
-                  margin-left: 30px;
-                  margin-bottom: -140px;
-                  width: 300px;" />
-          </span>
-          <div class="eula">
-            국립안동대학교 빅데이터 회원가입<br />스마트 카셰어링 차고지 솔루션
+    <main>
+      <div class="page">
+        <div class="container2">
+          <!-- 왼쪽 안내 패널 -->
+          <div class="left">
+            <span>
+              <img src="../black_name.png" alt="Logo" style="margin-left:30px; width:300px;" />
+            </span>
+            <div class="eula">
+              국립안동대학교 빅데이터 회원가입<br />
+              스마트 카셰어링 차고지 솔루션
+            </div>
+            <div class="info">
+              <p>• 회원가입 시 이메일과 비밀번호를 <br>정확히 입력해주세요.</p>
+              <p>• 비밀번호는 최소 6자리 이상이어야 합니다.</p>
+              <p style="color: red";>• 개인정보는 안전하게 관리됩니다.<br/>(실제 기입x)</p>
+            </div>
           </div>
-        </div>
-        <div class="right">
-          <!-- svg 애니메이션 -->
-          <svg viewBox="10 -10 300 340">
-            <defs>
-              <linearGradient id="linearGradient" x1="13" y1="193.5" x2="307" y2="193.5" gradientUnits="userSpaceOnUse">
-                <stop style="stop-color: #ff00ff" offset="0" />
-                <stop style="stop-color: #ff0000" offset="1" />
-              </linearGradient>
-            </defs>
-            <path
-              d="m 40,120.00016 239.99984,-3.2e-4 c 0,0 24.99263,0.79932 25.00016,35.00016 0.008,34.20084 -25.00016,35 -25.00016,35 h -239.99984 c 0,-0.0205 -25,4.01348 -25,38.5 0,34.48652 25,38.5 25,38.5 h 215 c 0,0 20,-0.99604 20,-25 0,-24.00396 -20,-25 -20,-25 h -190 c 0,0 -20,1.71033 -20,25 0,24.00396 20,25 20,25 h 168.57143" />
-          </svg>
 
-          <div class="form" style="font-size: 40px; width:250px;">
-            <!----아이디---->
-            <label for="email" style="font-size:20px; margin-top: 72px;">ID</label>
-            <input type="email" id="email" placeholder="Enter your email" required
-              style="font-size: 22px; margin-bottom: -20px;" />
+          <!-- 오른쪽 폼 패널 -->
+          <div class="right">
+            <div class="form">
+              <label for="email">ID (이메일)</label>
+              <input type="email" id="email" placeholder="Enter your email" required />
 
-            <!----비번---->
-            <label for="password" style="font-size: 20px; margin-top: 20px;">Password</label>
-            <input type="password" id="password" placeholder="Enter your password" required style="font-size: 22px;" />
+              <label for="password">Password</label>
+              <input type="password" id="password" placeholder="Enter your password" required />
 
-            <!----제출---->
-            <input type="submit" id="submit" value="Submit" class="login-form" style="font-size: 24px;" />
+              <label for="passwordConfirm">Confirm Password</label>
+              <input type="password" id="passwordConfirm" placeholder="Confirm your password" required />
+
+              <label for="name">Name</label>
+              <input type="text" id="name" placeholder="Enter your name" required />
+
+              <label for="phone">Phone Number</label>
+              <input type="text" id="phone" placeholder="Enter your phone number" required />
+
+              <label for="birth">Birth Date</label>
+              <input type="date" id="birth" required />
+
+              <label for="address">Address</label>
+              <input type="text" id="address" placeholder="Enter your address" />
+
+              <input type="submit" id="submit" value="Sign Up" />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </main>
+
     <footer>
       <div>
         <p>&copy; 2024 Road_Datalab. All Rights Reserved.</p>

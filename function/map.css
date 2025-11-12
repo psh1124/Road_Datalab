@@ -30,7 +30,7 @@ main .content {
 
 .service-grid {
     margin-left: -1.5%;
-    margin-top: 15px;
+    /* margin-top: 15px; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -47,7 +47,7 @@ main .name {
     font-weight: bold;
     font-size: 58px;
     margin-top: 10px;
-    margin-left: 15%;
+    margin-left: 25%;
     color: #333;
 }
 
@@ -110,7 +110,7 @@ button.active {
 }
 
 button:hover {
-    transform: translate(10%, 10%);
+    transform: translate(5%, 5%);
     background-color: #dcdcdc;
 }
 
@@ -119,8 +119,8 @@ a {
     text-decoration: none;
 }
 
-a:hover {
-    text-decoration: underline;
+.bot:hover {
+    transform: translate(5%, 5%);
 }
 
 @keyframes gradientFill {

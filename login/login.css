@@ -1,15 +1,18 @@
 .page {
     background: #e2e2e5a4;
+    display: flex;
     flex-direction: column;
-    top: 25%;
-    left: 28%;
-    height: fit-content;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 160px);
+    position: relative;
+    margin: auto;
     width: fit-content;
-    position: absolute;
+    height: fit-content;
 }
 
 .container2 {
-    position:relative;
+    position: relative;
     display: flex;
     top: 10%;
     height: 400px;
@@ -77,7 +80,10 @@ input {
 }
 
 #submit {
-    color: #707075;
+    /* border:1px solid white;
+    border-radius: 3px; */
+    padding: 4px;
+    color: #ffffff;
     margin-top: 40px;
     transition: color 300ms;
     margin-top: 43px;
@@ -89,14 +95,7 @@ input {
 }
 
 footer {
-    animation: slideUp 0.8s ease-in-out forwards;
-    width: 100%;
-    bottom: 0%;
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    z-index: 1000;
+    position: static;
 }
 
 footer p {
@@ -107,17 +106,20 @@ footer p {
     .page {
         height: auto;
     }
+
     .container {
         flex-direction: column;
         height: 630px;
         width: 320px;
     }
+
     .left {
         height: 100%;
         left: 20px;
         width: calc(100% - 40px);
         max-height: 270px;
     }
+
     .right {
         flex-shrink: 0;
         height: 100%;
