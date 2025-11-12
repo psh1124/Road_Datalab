@@ -56,11 +56,12 @@ Node.js 환경에서 의존성 설치 (필요 시)
 npm install
 ```
 
-3. VSCode에서 Live Server로 실행
+3. 개발 서버 실행
+```bash
+npm run dev
+```
 
-VSCode에서 프로젝트 폴더를 열고
-home/home.html 또는 원하는 HTML 파일에서 우클릭 → "Open with Live Server" 클릭
-브라우저에서 웹 앱 실행 확인 (ALT L + ALT O)
+※ VS Code 에 Live Server로 하면 iFrame이 안나옴...
 
 ---
 
@@ -68,7 +69,9 @@ home/home.html 또는 원하는 HTML 파일에서 우클릭 → "Open with Live 
 
 - **UI 개선**: 버튼 및 선택 요소 개선
 - **CSV 기능 개선**: CSV 로드 및 표시 기능 개선
-- **iframe 지도 개선**: 반응형 적용
+- **iframe 지도 표시 속도 개선**: 로딩시간 단축
 - **프로젝트 구조 최신화**
-- **실행 안내 추가**: VSCode Live Server 실행 방법 포함
+- **실행 안내 변경**: VSCode Live Server -> Vite
+
+---
 
