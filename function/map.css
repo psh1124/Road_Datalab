@@ -30,7 +30,6 @@ main .content {
 
 .service-grid {
     margin-left: -1.5%;
-    /* margin-top: 15px; */
     display: flex;
     flex-direction: column;
     align-items: center;
