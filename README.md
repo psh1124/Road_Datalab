@@ -72,3 +72,4 @@ home/home.html 또는 원하는 HTML 파일에서 우클릭 → "Open with Live 
 - **프로젝트 구조 최신화**
 - **실행 안내 추가**: VSCode Live Server 실행 방법 포함
 
+---
